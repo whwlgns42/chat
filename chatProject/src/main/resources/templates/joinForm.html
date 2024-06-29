@@ -1,10 +1,88 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원가입 페이지</title>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>회원가입</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	<body class="is-preload">
 
-</body>
+		<!-- Header -->
+			<header id="header">
+				<a href="/" class="title">홈(개발중)</a>
+				<nav>
+					<ul>
+						<li><a href="/">홈</a></li>
+						<li><a href="#">개발중</a></li>
+						<li><a href="#"  class="active">개발중</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">회원가입</h1>
+							<!-- Form -->
+								<section>
+									<h2>개인정보</h2>
+									 <form method="post" th:action="@{/join}" th:object="${userDTO}">
+							            <div class="row gtr-uniform">
+							                <div class="col-5">
+							                    <input type="text" th:field="*{name}" placeholder="이름" class="form-control" />
+							                </div>
+							                <div class="col-5">
+							                    <input type="text" th:field="*{age}" placeholder="나이" class="form-control" />
+							                </div>
+							                <div class="col-5">
+							                    <input type="text" th:field="*{userId}" placeholder="아이디" class="form-control" />
+							                </div>
+							                <div class="col-5">
+							                    <input type="password" th:field="*{password}" placeholder="패스워드" class="form-control" />
+							                </div>
+							                <div class="col-5">
+							                    <input type="email" th:field="*{email}" placeholder="이메일" class="form-control" />
+							                </div>
+							                <div class="col-5">
+							                    <input type="text" th:field="*{mobile}" placeholder="휴대폰번호" class="form-control" />
+							                </div>
+							                <div class="col-12">
+							                    <ul class="actions">
+							                        <li><input type="submit" value="회원가입 완료" class="btn btn-primary" /></li>
+							                        <li><input type="reset" value="초기화" class="btn btn-secondary" /></li>
+							                    </ul>
+							                </div>
+							            </div>
+        							</form>
+								</section>
+							</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved(개발중)).</li><li>Design: <a href="/">개발중</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
