@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	
+	 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<body class="is-preload">
 
 		<!-- Header -->
@@ -32,29 +32,29 @@
 							<!-- Form -->
 								<section>
 									<h2>개인정보</h2>
-									 <form method="post" th:action="@{/join}" th:object="${userDTO}">
+									 <form method="post" th:action="@{/join}" th:object="${userDTO}" onsubmit="return joinBtn();">
 							            <div class="row gtr-uniform">
 							                <div class="col-5">
-							                    <input type="text" th:field="*{name}" placeholder="이름" class="form-control" />
+								                    <input type="text" id="name" th:field="*{name}" placeholder="이름" class="form-control"/>
 							                </div>
 							                <div class="col-5">
-							                    <input type="text" th:field="*{age}" placeholder="나이" class="form-control" />
+							                    <input type="text" id="age" th:field="*{age}" placeholder="나이" class="form-control" />
 							                </div>
 							                <div class="col-5">
-							                    <input type="text" th:field="*{userId}" placeholder="아이디" class="form-control" />
+							                    <input type="text" id="userId" th:field="*{userId}" placeholder="아이디" class="form-control" />
 							                </div>
 							                <div class="col-5">
-							                    <input type="password" th:field="*{password}" placeholder="패스워드" class="form-control" />
+							                    <input type="password" id="password" th:field="*{password}" placeholder="패스워드" class="form-control" />
 							                </div>
 							                <div class="col-5">
-							                    <input type="email" th:field="*{email}" placeholder="이메일" class="form-control" />
+							                    <input type="email" id="email" th:field="*{email}" placeholder="이메일" class="form-control" />
 							                </div>
 							                <div class="col-5">
-							                    <input type="text" th:field="*{mobile}" placeholder="휴대폰번호" class="form-control" />
+							                    <input type="text" id="mobile" th:field="*{mobile}" placeholder="휴대폰번호" class="form-control" />
 							                </div>
 							                <div class="col-12">
 							                    <ul class="actions">
-							                        <li><input type="submit" value="회원가입 완료" class="btn btn-primary" /></li>
+							                        <li><input type="submit" value="회원가입 완료" class="btn btn-primary"/></li>
 							                        <li><input type="reset" value="초기화" class="btn btn-secondary" /></li>
 							                    </ul>
 							                </div>
@@ -63,6 +63,7 @@
 								</section>
 							</div>
 					</section>
+					
 
 			</div>
 
@@ -74,6 +75,11 @@
 					</ul>
 				</div>
 			</footer>
+			
+			
+			
+			
+		
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -83,6 +89,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			
+			<!-- 회원가입 -->
+			<script src="user/join.js"></script> 
 	</body>
 </html>
